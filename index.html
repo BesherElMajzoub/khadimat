@@ -1,206 +1,816 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تأجير خادمات بالشهر أو الساعة</title>
-  <meta name="description" content="خادمات بالشهر أو الساعة في السعودية. خدمة موثوقة – سريعة – نظامية. احجز الآن عبر واتساب!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حلول سداد المتعثرات المالية | تخلص من ديونك بسهولة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57c5b6;
+            --accent-color: #159895;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --success-color: #28a745;
+            --whatsapp-color: #25D366;
+            --phone-color: #34B7F1;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --orange: #F86F4E;
-      --blue-dark: #1D3557;
-      --white: #fff;
-      --gray-bg: #F9F9F9;
-      --icon: #FF914D;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Tajawal', sans-serif;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-      background-color: var(--white);
-      color: #333;
-    }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
 
-    header {
-      background-color: var(--orange);
-      padding: 50px 20px;
-      color: var(--white);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    header .text {
-      flex: 1 1 300px;
-    }
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
 
-    header p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
 
-    .cta-button {
-      background-color: #E7461D;
-      padding: 12px 24px;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+        .logo i {
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
 
-    header .image {
-      flex: 1 1 300px;
-      text-align: center;
-    }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
 
-    header img {
-      width: 250px;
-      border-radius: 10px;
-    }
+        .nav-links li {
+            margin-right: 20px;
+        }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      background-color: var(--gray-bg);
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
 
-    .feature-box {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-    .feature-box h3 {
-      color: var(--blue-dark);
-      margin-bottom: 10px;
-    }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
 
-    .feature-box p {
-      font-size: 15px;
-    }
+        /* Sticky Contact Buttons - Both Sides */
+        .sticky-contact-left {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .faq {
-      background-color: var(--blue-dark);
-      color: white;
-      padding: 40px 20px;
-    }
+        .sticky-contact-right {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .faq h2 {
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 30px;
-    }
+        .sticky-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
 
-    .faq-item {
-      margin-bottom: 20px;
-    }
+        .sticky-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
 
-    .faq-item h4 {
-      color: var(--orange);
-      margin-bottom: 5px;
-    }
+        .sticky-btn.whatsapp {
+            background-color: var(--whatsapp-color);
+        }
 
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
+        .sticky-btn.phone {
+            background-color: var(--phone-color);
+        }
 
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      z-index: 9999;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+        .sticky-btn.call-now {
+            background-color: var(--accent-color);
+            font-size: 24px;
+        }
 
-    .whatsapp-button img {
-      width: 20px;
-      margin-left: 8px;
-    }
+        .sticky-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-    }
-  </style>
+        .sticky-btn:hover::after {
+            transform: translateX(0);
+        }
+
+        .sticky-btn .pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: pulse-animation 2s infinite;
+            opacity: 0;
+        }
+
+        .btn-text {
+            position: absolute;
+            white-space: nowrap;
+            right: 100%;
+            margin-right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .sticky-btn:hover .btn-text {
+            opacity: 1;
+            right: 100%;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            animation: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 15px auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-details i {
+            margin-left: 15px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            animation: fadeInRight 1s ease;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Tajawal', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(87, 197, 182, 0.2);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 0 0 20px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-contact-left,
+            .sticky-contact-right {
+                bottom: 15px;
+            }
+
+            .sticky-contact-left {
+                left: 15px;
+            }
+
+            .sticky-contact-right {
+                right: 15px;
+            }
+
+            .sticky-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 26px;
+            }
+
+            .btn-text {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-contact-left,
+            .sticky-contact-right {
+                bottom: 10px;
+            }
+
+            .sticky-contact-left {
+                left: 10px;
+            }
+
+            .sticky-contact-right {
+                right: 10px;
+            }
+
+            .sticky-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Sticky Contact Buttons - Both Sides -->
+    <div class="sticky-contact-left">
+        <a href="https://wa.me/966501234567" class="sticky-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="btn-text">راسلنا على واتساب</span>
+            <div class="pulse"></div>
+        </a>
+    </div>
 
-  <header>
-    <div class="text">
-      <h1>تأجير خادمات بالشهر أو الساعة</h1>
-      <p>خدمة موثوقة – سريعة – نظامية في جميع مدن السعودية</p>
-      <a href="https://wa.me/9665XXXXXXX" class="cta-button" target="_blank">احجز الآن عبر واتساب</a>
+    <div class="sticky-contact-right">
+        <a href="tel:+966501234567" class="sticky-btn phone">
+            <i class="fas fa-phone"></i>
+            <span class="btn-text">اتصل بنا الآن</span>
+            <div class="pulse"></div>
+        </a>
     </div>
-    <div class="image">
-      <img src="Inbox cleanup-bro.png" alt="" />
-    </div>
-  </header>
 
-  <section class="features">
-    <div class="feature-box">
-      <h3>خادمات مُدربات</h3>
-      <p>خدمة نظافة ممتازة للمنازل، الشقق، الشركات، والفلل.</p>
-    </div>
-    <div class="feature-box">
-      <h3>عقود مرنة</h3>
-      <p>اختَر بين التأجير بالساعة أو بالشهر حسب راحتك.</p>
-    </div>
-    <div class="feature-box">
-      <h3>خدمة في جميع المدن</h3>
-      <p>متاح في الرياض، جدة، الدمام، مكة، والقصيم.</p>
-    </div>
-    <div class="feature-box">
-      <h3>دعم 24/7</h3>
-      <p>نحن بجانبك دائمًا عبر الهاتف أو الواتساب.</p>
-    </div>
-  </section>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-hand-holding-usd"></i>
+                <span>حلول المتعثرات</span>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </header>
 
-  <section class="faq">
-    <h2>الأسئلة الشائعة</h2>
-    <div class="faq-item">
-      <h4>هل الخادمات متاحات يوميًا؟</h4>
-      <p>نعم، حسب الوقت الذي يناسبك وبشكل مرن.</p>
-    </div>
-    <div class="faq-item">
-      <h4>هل يوجد ضمان للخدمة؟</h4>
-      <p>نعم، لدينا سياسة استبدال فورية ورضا العميل أولويتنا.</p>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>تخلص من تعثراتك المالية بسهولة وأمان</h1>
+            <p>نقدم حلولاً مخصصة لتسوية الديون والمتعثرات المالية مع البنوك والجهات التمويلية في المملكة العربية السعودية. خبرة واسعة في التفاوض لصالحك وتخفيض الديون.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">احصل على استشارة مجانية الآن</a>
+                <a href="tel:+966501234567" class="cta-button secondary">اتصل بنا الآن</a>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 تأجير خادمات بالسعودية – جميع الحقوق محفوظة
-  </footer>
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="container">
+            <h2 class="section-title">كيف نساعدك في حل مشكلتك المالية؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>تفاوض مع البنوك</h3>
+                    <p>نقوم بالتفاوض مع البنوك والجهات التمويلية نيابة عنك للحصول على أفضل شروط السداد وتخفيض المبالغ المستحقة.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>إعادة هيكلة الديون</h3>
+                    <p>نقدم حلولاً مالية مخصصة لإعادة هيكلة ديونك وجعل أقساط السداد مناسبة لوضعك المالي الحالي.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>حماية قانونية</h3>
+                    <p>نضمن لك حلولاً قانونية متوافقة مع أنظمة المملكة لحمايتك من أي إجراءات قانونية قد تتخذ ضدك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <a href="https://wa.me/9665XXXXXXX" class="whatsapp-button" target="_blank">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
-    تواصل معنا
-  </a>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>تواصل معنا اليوم</h2>
+                <p>لا تتردد في الاتصال بنا للحصول على استشارة مجانية حول وضعك المالي. سنقوم بدراسة حالتك بعناية واقتراح الحل الأمثل لك.</p>
+                <div class="contact-details">
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>+966 50 123 4567</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@debt-solutions.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>الرياض، المملكة العربية السعودية</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit-btn">احصل على استشارة مجانية</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>حلول المتعثرات</span>
+                </a>
+                <p>الحل الأمثل لمشاكلك المالية في المملكة العربية السعودية</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 حلول المتعثرات المالية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle (CSS-only solution) -->
+    <input type="checkbox" id="mobile-menu-toggle" style="display: none;">
+    <style>
+        #mobile-menu-toggle:checked ~ header .nav-links {
+            right: 0;
+        }
+    </style>
+    <label for="mobile-menu-toggle" class="mobile-menu-btn"></label>
 </body>
 </html>
